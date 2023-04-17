@@ -15,7 +15,7 @@ class CloudStorage extends ChangeNotifier {
 
   Future initAvatar(String uid) async {
     Uint8List avatar =
-        (await rootBundle.load('basic_avatar.jpg')).buffer.asUint8List();
+        (await rootBundle.load('assets/basic_avatar.jpg')).buffer.asUint8List();
     await storageRef.child('avatars/$uid').putData(avatar);
     notifyListeners();
   }
